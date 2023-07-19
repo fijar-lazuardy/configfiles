@@ -4,7 +4,23 @@ local lsp = require('lsp-zero').preset({
   }
 })
 lsp.setup()
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pylsp.setup{
+    settings = {
+        pylsp = {
+            plugins = {
+                flake8 = {
+                    enabled = true,
+                    maxLineLength = 120,
+                    indentSize = 4
+                },
+                black = {
+                    enabled = true,
+                    line_length = 120
+                }
+            }
+        }
+    }
+}
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
