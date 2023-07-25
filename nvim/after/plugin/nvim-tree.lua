@@ -1,0 +1,11 @@
+--local function cust_on_attach(bufnnr)
+--    local api = require "nvim-tree.api"
+--
+--    api.config.mappings.default_on_attach(bufnnr)
+--    vim.keymap.set("n", "<leader>ft", api.tree.toggle())
+--end
+--
+--require("nvim-tree").setup {
+--    on_attach = cust_on_attach,
+--}
+---- disable netrw at the very start of your init.lua
