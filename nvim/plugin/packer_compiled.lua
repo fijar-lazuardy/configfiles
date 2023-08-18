@@ -101,6 +101,11 @@ _G.packer_plugins = {
     path = "/Users/lazzuuu/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
+  ["gopher.nvim"] = {
+    loaded = true,
+    path = "/Users/lazzuuu/.local/share/nvim/site/pack/packer/start/gopher.nvim",
+    url = "https://github.com/olexsmir/gopher.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/lazzuuu/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -110,6 +115,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/lazzuuu/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/lazzuuu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
