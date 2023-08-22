@@ -57,6 +57,15 @@ return require('packer').startup(function(use)
         config = function()
             require("chatgpt").setup({
                 api_key_cmd = "pass show chatgpt/nvim",
+                openai_params = {
+                    model = "gpt-3.5-turbo",
+                    frequency_penalty = 0,
+                    presence_penalty = 0,
+                    max_tokens = 1000,
+                    temperature = 0,
+                    top_p = 1,
+                    n = 1,
+                },
             })
         end,
         requires = {
@@ -76,4 +85,5 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    use('jose-elias-alvarez/null-ls.nvim')
 end)
