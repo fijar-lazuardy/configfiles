@@ -69,7 +69,7 @@ local gwidth = vim.api.nvim_list_uis()[1].width
 local gheight = vim.api.nvim_list_uis()[1].height
 local width = 60
 local height = 30
-require("nvim-tree").setup({
+return {
     on_attach = custom_on_attach,
     disable_netrw=true,
     sort = {
@@ -81,10 +81,10 @@ require("nvim-tree").setup({
         cursorline = true,
         debounce_delay = 15,
         width = width,
-        side = "left",
+        side = "center",
         preserve_window_proportions = false,
         number = false,
-        relativenumber = true,
+        relativenumber = false,
         signcolumn = "yes",
         float = {
             enable = true,
@@ -128,4 +128,4 @@ require("nvim-tree").setup({
             trash = true,
         },
     },
-})
+}
