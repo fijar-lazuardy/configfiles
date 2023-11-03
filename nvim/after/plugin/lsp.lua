@@ -4,6 +4,8 @@ local lsp = require('lsp-zero').preset({
   }
 })
 
+local util = require 'lspconfig.util'
+
 lsp.setup()
 lsp.nvim_workspace()
 
@@ -22,23 +24,36 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>od", function() vim.diagnostic.open_float() end, opts)
 end)
-require'lspconfig'.pylsp.setup{
+
+require'lspconfig'.pyright.setup{
+    single_file_support = true,
     settings = {
-        pylsp = {
-            plugins = {
-                flake8 = {
-                    enabled = true,
-                    maxLineLength = 120,
-                    indentSize = 4
-                },
-                black = {
-                    enabled = true,
-                    line_length = 120
-                }
-            }
-        }
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'openFilesOnly',
+            },
+        },
     }
 }
+-- require'lspconfig'.pylsp.setup{
+--     settings = {
+--         pylsp = {
+--             plugins = {
+--                 flake8 = {
+--                     enabled = true,
+--                     maxLineLength = 120,
+--                     indentSize = 4
+--                 },
+--                 black = {
+--                     enabled = true,
+--                     line_length = 120
+--                 }
+--             }
+--         }
+--     }
+-- }
 
 local util = require "lspconfig/util"
 require'lspconfig'.gopls.setup{
@@ -90,3 +105,5 @@ require'lspconfig'.html.setup {
 
 require'lspconfig'.bufls.setup{}
 require'lspconfig'.emmet_language_server.setup{}
+require'lspconfig'.vuels.setup{}
+
